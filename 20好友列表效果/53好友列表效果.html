@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .parentWrap {
+            width: 200px;
+            text-align: center;
+        }
+
+        .parentWrap > li {
+            border: 1px solid #999;
+            background-color: #e0ecff;
+        }
+
+        .groupTitle {
+            display: block;
+            height: 20px;
+            line-height: 20px;
+            font-size: 16px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .parentWrap ul {
+            background-color: #fff;
+            display: none;
+        }
+
+        .friends > li {
+            background: white;
+            height: 28px;
+            line-height: 28px;
+            border-bottom: 1px solid #999;
+            cursor: default;
+        }
+    </style>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            //点击.groupTitle 让当前标题的下一个兄弟元素显示
+            //其他ul隐藏
+            //如果现在ul是显示就隐藏 如果是隐藏的就显示
+            //1.获取.groupTitle 注册点击事件
+            $(".groupTitle").click(function () {
+                //2.获取当前元素的下一个兄弟元素并显示 并让其他的隐藏
+                //3.点击标题后 如果已经是显示的了就要隐藏 如果是隐藏的就显示
+                //3.1先判断当前的显示状态
+                //console.log($(this).next().css("display"));
+                var dis = $(this).next().css("display");
+                if (dis === "none") {//现在是隐藏的 就该显示了
+                    $(this).next().show();//显示
+                } else {
+                    $(this).next().hide();//隐藏
+                }
+
+
+                $(this).parent().siblings().children("ul").hide();
+
+            });
+        })
+    </script>
+</head>
+<body>
+<ul class="parentWrap">
+    <li>
+        <span class="groupTitle">我的好友</span>
+        <ul class="friends">
+            <li>小1 - 好友</li>
+            <li>小2 - 好友</li>
+            <li>小3 - 好友</li>
+            <li>小4 - 好友</li>
+            <li>小5 - 好友</li>
+        </ul>
+    </li>
+    <li>
+        <span class="groupTitle">土豪们</span>
+        <ul class="friends">
+            <li>小1 - 好友</li>
+            <li>小2 - 好友</li>
+            <li>小3 - 好友</li>
+            <li>小4 - 好友</li>
+            <li>小5 - 好友</li>
+        </ul>
+    </li>
+    <li>
+        <span class="groupTitle">程序猿</span>
+        <ul class="friends">
+            <li>小1 - 好友</li>
+            <li>小2 - 好友</li>
+            <li>小3 - 好友</li>
+            <li>小4 - 好友</li>
+            <li>小5 - 好友</li>
+        </ul>
+    </li>
+    <li>
+        <span class="groupTitle">美工妹子</span>
+        <ul class="friends">
+            <li>小1 - 好友</li>
+            <li>小2 - 好友</li>
+            <li>小3 - 好友</li>
+            <li>小4 - 好友</li>
+            <li>小5 - 好友</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

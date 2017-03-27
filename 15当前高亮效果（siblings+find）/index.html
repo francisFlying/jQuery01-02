@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li {
+            font-size: 22px;
+        }
+    </style>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            //给每一个li注册鼠标移入事件 鼠标经过当前li 给当前li添加背景色
+            $("#box li").mouseenter(function () {
+                $(this).css("background", "pink");
+                //找到当前li的其他兄弟元素
+                //siblings() 方法 可以找到所有其他的兄弟元素
+                $(this).siblings().css("background", "white");
+                //
+                //$(this).css("background", "pink").siblings().css("background", "white");
+            });
+            //离开#box后 所有li的样式变为白色
+            $("#box").mouseleave(function () {
+                //$("li").css("background", "white");
+                //$("li")
+                //$("ul>li")
+                //$("#box>ul>li")
+                //$("#box li")
+                //$(this).children().children()
+                //find() 方法 可以到当前元素 中的所有后代中寻找元素
+                $(this).find("li").css("background", "white");
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li>菠萝</li>
+        <li>柚子</li>
+        <li>橙子</li>
+        <li>荔枝</li>
+        <li>木瓜</li>
+        <li>榴莲</li>
+        <li>柠檬</li>
+        <li>香蕉</li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $("a").click(function () {
+                var ind = $(this).index();//当前元素在其兄弟元素中的索引
+                alert(ind);
+            })
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+</ul>
+</body>
+</html>
